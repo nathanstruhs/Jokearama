@@ -8,6 +8,7 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -36,8 +37,19 @@ public class JokeListFragment extends Fragment {
     }
 
     private class JokeHolder extends RecyclerView.ViewHolder {
+
+        private TextView mTitleTextView;
+        private Joke joke;
+
         public JokeHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_joke, parent, false));
+
+            mTitleTextView = (TextView) itemView.findViewById(R.id.joke_title);
+        }
+
+        public void bind(Joke joke) {
+            this.joke = joke;
+            mTitleTextView.setText(joke.getTitle());
         }
     }
 
@@ -55,7 +67,10 @@ public class JokeListFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(JokeHolder holder, int position) {}
+        public void onBindViewHolder(JokeHolder holder, int position) {
+            Joke joke = jokes.get(position);
+            holder.bind(joke);
+        }
 
         @Override
         public int getItemCount() {

@@ -19,7 +19,7 @@ public class JokeStorage {
     private JokeStorage(Context context) {
         jokes = new ArrayList<>();
         String[] jokeArray = {"Knock Knock", "Who's there?", "Olive.", "Olive who?", "Olive you and I don’t care who knows it!"};
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Joke joke = new Joke();
             joke.setTitle("Joke #" + i);
             joke.setJoke(jokeArray);

@@ -24,6 +24,6 @@ public class Joke {
     public String[] getJoke() { return joke; }
     public void setJoke(String[] joke) { this.joke = joke; }
 
-    public boolean isHasBeenViewed() { return hasBeenViewed; }
+    public boolean hasBeenViewed() { return hasBeenViewed; }
     public void setHasBeenViewed(boolean hasBeenViewed) { this.hasBeenViewed = hasBeenViewed; }
 }
